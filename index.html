@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Editar y actualizar operaciones de trading en Forex - Gestiona tus registros de manera eficiente.">
+    <meta name="robots" content="index, follow">
+    <title>Editar Operaciones - Forex Trading Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Editar Operaciones</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://forex-trading-dashboard.com/register" aria-label="Ir a Registro">Registro</a></li>
+            <li><a href="https://forex-trading-dashboard.com/summary" aria-label="Ir a Resumen">Resumen</a></li>
+            <li><a href="https://forex-trading-dashboard.com/charts" aria-label="Ir a Gráficos">Gráficos</a></li>
+            <li><a href="https://forex-trading-dashboard.com/stats" aria-label="Ir a Estadísticas">Estadísticas</a></li>
+            <li><a href="https://forex-trading-dashboard.com/currency-stats" aria-label="Ir a Estadísticas por Par">Por Par</a></li>
+            <li><a href="https://forex-trading-dashboard.com/edit" aria-label="Ir a Editar">Editar</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <table id="tradeTable">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Par de Divisas</th>
+                    <th>Tipo</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                    <th>Beneficio/Pérdida</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos de la tabla se llenarán dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="editModal" class="modal" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Cerrar">&times;</button>
+            <h2 id="editModalTitle">Editar Operación</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <label for="editDate">Fecha:</label>
+                <input type="date" id="editDate" required>
+                <label for="editPair">Par de Divisas:</label>
+                <select id="editPair" required>
+                    <option value="EUR/USD">EUR/USD</option>
+                    <option value="GBP/USD">GBP/USD</option>
+                    <option value="USD/JPY">USD/JPY</option>
+                    <option value="USD/CHF">USD/CHF</option>
+                </select>
+                <label for="editType">Tipo:</label>
+                <select id="editType" required>
+                    <option value="Compra">Compra</option>
+                    <option value="Venta">Venta</option>
+                </select>
+                <label for="editEntry">Entrada:</label>
+                <input type="number" id="editEntry" step="0.00001" required>
+                <label for="editExit">Salida:</label>
+                <input type="number" id="editExit" step="0.00001" required>
+                <label for="editProfitLoss">Beneficio/Pérdida:</label>
+                <input type="number" id="editProfitLoss" step="0.01" required>
+                <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
